@@ -30,22 +30,29 @@
 html,
 body {
   margin: 0 auto;
-  max-width: 1200px;
   padding: 0;
   direction: rtl;
   overflow-x: hidden;
-  background-color: var(--background);
-  min-height: 100vh;
-  border: var(--danger) 1px solid;
 }
 
 body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr;
+  background-color: var(--background);
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, "Noto Kufi Arabic", sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.children {
+  margin: 0 auto;
+  min-height: 100vh;
+  border: 1px solid deeppink;
+  max-width: 1200px;
 }
 
 h1 {

@@ -1,0 +1,57 @@
+.navigation {
+  background-color: #102039;
+  color: #fff;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navTop,
+.navBottom {
+  flex-grow: 1;
+  max-height: 100px;
+  display: flex;
+  padding: 0px 55px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navTop {
+}
+
+.navTop a {
+  max-height: 50%;
+}
+
+.navBottom {
+  gap: 34px;
+}
+
+.navBottomToggler {
+}
+
+.navBottomLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-grow: 1;
+  border: 1px solid #000;
+  border-radius: 34px;
+  list-style: none;
+  padding: 21px;
+  box-shadow: -5px -5px 13px #122542, 5px 5px 13px #0e1b30;
+}
+
+.navBottomLinks a {
+  padding: 13px 16px;
+  border: 1px solid #000000;
+  border-radius: 13px;
+}
