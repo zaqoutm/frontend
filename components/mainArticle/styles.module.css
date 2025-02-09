@@ -1,0 +1,38 @@
+.main {
+  border: 1px solid var(--border);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.21);
+  border-radius: 13px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 490px;
+  max-width: 793px;
+  margin-bottom: 34px;
+  overflow: hidden;
+}
+
+.imageContainer {
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.imageContainer img {
+  height: auto;
+  object-fit: cover;
+  min-width: 800px;
+  max-height: 400px;
+  background-color: #f2f2f2;
+}
+
+.titleContainer {
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-content: flex-start;
+  padding: 16px 21px;
+}
+
+.titleContainer p {
+  color: var(--secondary-text);
+}

@@ -8,6 +8,7 @@
   --success: #4fc62b;
   --danger: #ff3a30;
   --warning: #ffb649;
+  --orange: #ff7043;
 
   /* special colors */
   --pink: #ff58a0;
@@ -15,6 +16,8 @@
   --green-light: #e6fead;
 
   --border: #f2f2f2;
+
+  --nav-bg: #102039;
 }
 
 /* light */
@@ -51,17 +54,27 @@ body {
 .children {
   margin: 0 auto;
   min-height: 100vh;
-  border: 1px solid deeppink;
+  min-width: 1200px;
   max-width: 1200px;
+  /* border: 1px solid deeppink; */
 }
 
 h1 {
   font-family: Almarai;
+  font-size: 26px;
+  font-weight: 400;
   /* font-family: var(--font-almarai); */
 }
 
 h2 {
   color: var(--secondary-text);
+  font-size: 16px;
+}
+
+img {
+  /* overflow-clip-margin: content-box;
+  overflow: clip;
+  width: 100%; */
 }
 
 * {

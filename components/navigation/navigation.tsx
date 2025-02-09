@@ -8,17 +8,54 @@ export default function NavigationComponent() {
       <div className={styles.navContainer}>
         {/* Top */}
         <div className={styles.navTop}>
-          <Link href={"/"}>
-            <Image src='aljazara.svg' alt='' width={100} height={100} />
+          <Link href={"/"} className={styles.logo}>
+            <Image
+              src='aljazara.svg'
+              alt=''
+              width={50}
+              height={50}
+              loading='eager'
+            />
           </Link>
-          <div>social</div>
+
+          <div className={styles.socialLinks}>
+            <Link href={"/"}>
+              <Image
+                src='x-icon-white.svg'
+                alt=''
+                width={24}
+                height={24}
+                loading='eager'
+              />
+            </Link>
+            <Link href={"/"}>
+              <Image
+                src='fb-icon-white.svg'
+                alt=''
+                width={24}
+                height={24}
+                loading='eager'
+              />
+            </Link>
+            <Link href={"/"}>
+              <Image
+                src='insta-icon-white.svg'
+                alt=''
+                width={24}
+                height={24}
+                loading='eager'
+              />
+            </Link>
+          </div>
         </div>
 
         {/* Bottom */}
         <div className={styles.navBottom}>
-          <div className={styles.navBottomToggler}>
-            <Link href='/bla'>button</Link>
-          </div>
+          {/* <div className={styles.navBottomToggler}> */}
+          {/* <button>
+              <Image src='aljazara.svg' alt='' width={100} height={100} />
+            </button> */}
+          {/* </div> */}
           <ul className={styles.navBottomLinks}>
             <li>
               <Link href='/business'>المال والأعمال</Link>
@@ -27,13 +64,10 @@ export default function NavigationComponent() {
               <Link href='/tech'>التكنولوجيا</Link>
             </li>
             <li>
-              <Link href='/tech'>التكنولوجيا</Link>
+              <Link href='/tech'>مقالات تثقيفية</Link>
             </li>
             <li>
-              <Link href='/tech'>التكنولوجيا</Link>
-            </li>
-            <li>
-              <Link href='/tech'>التكنولوجيا</Link>
+              <Link href='/tech'>دليل المهاجر</Link>
             </li>
           </ul>
         </div>
