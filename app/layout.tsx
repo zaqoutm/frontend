@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Almarai, Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
-import styles from "./page.module.css";
+import NavigationComponent from "./components/navigation/navigation";
+import FooterComponent from "./components/footer/footer";
 
 // Fonts
 // use variables in css
@@ -30,18 +31,9 @@ export default function RootLayout({
   return (
     <html lang='ar'>
       <body className={`${[almarai.variable, notoKufi.variable]}`}>
-        {/* Navigation */}
-        <div>
-          <p>navigation</p>
-        </div>
-
-        {/* main contanet */}
+        <NavigationComponent />
         {children}
-
-        {/* footer */}
-        <footer className={styles.footer}>
-          <p>footer</p>
-        </footer>
+        <FooterComponent />
       </body>
     </html>
   );
