@@ -1,29 +1,23 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <h1>lkdlas;ldk;ask;lkd</h1>
+        <h1>تجربة الخطوط</h1>
+        <h2>تجربة الخطوط</h2>
+        <p>
+          باريس- ضمن فعاليات واجتماعات المنتدى الاقتصادي العالمي الذي
+          تستضيفه مدينة دافوس بسويسرا، صرح الأمين العام للأمم المتحدة أنطونيو
+          غوتيريش بأن "علامة الاستفهام الحقيقية تكمن في سوريا"، في إشارة منه إلى
+          السؤال الذي تطرحه الدول الغربية بشأن المستقبل الديمقراطي بعد سقوط نظام
+          بشار الأسد. وبعد تعليق غوتيريش بساعات قليلة، حاول وزير الخارجية في
+          حكومة تصريف الأعمال السورية أسعد حسن الشيباني تقديم بعض الإجابات في
+          حديث جمعه مع رئيس الوزراء البريطاني الأسبق توني بلير، الأربعاء، مشددا
+          على ضرورة رفع العقوبات الاقتصادية عن دمشق باعتباره "مفتاح الاستقرار"
+          في بلاده التي مزقتها الحرب لعدة سنوات.
+        </p>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
