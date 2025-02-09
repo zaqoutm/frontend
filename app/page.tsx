@@ -18,7 +18,7 @@ export default function Home() {
         {/* featured articles */}
         {/* sections */}
         <div className={styles.articlesSection}>
-          <h1>section 2</h1>
+          <h1>أخبار المال والأعمال</h1>
         </div>
       </main>
     </div>

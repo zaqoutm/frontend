@@ -3,6 +3,8 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 
 export default function NavigationComponent() {
+  const width_height = 18;
+
   return (
     <div className={styles.navigation}>
       <div className={styles.navContainer}>
@@ -10,7 +12,7 @@ export default function NavigationComponent() {
         <div className={styles.navTop}>
           <Link href={"/"} className={styles.logo}>
             <Image
-              src='aljazara.svg'
+              src='/aljazara.svg'
               alt=''
               width={50}
               height={50}
@@ -19,30 +21,30 @@ export default function NavigationComponent() {
           </Link>
 
           <div className={styles.socialLinks}>
-            <Link href={"/"}>
+            <Link href={"/x.com/aljazaranews"}>
               <Image
-                src='x-icon-white.svg'
+                src='/x-icon-white.svg'
                 alt=''
-                width={24}
-                height={24}
+                width={width_height}
+                height={width_height}
                 loading='eager'
               />
             </Link>
-            <Link href={"/"}>
+            <Link href={"/facebook.com/aljazaranews"}>
               <Image
-                src='fb-icon-white.svg'
+                src='/fb-icon-white.svg'
                 alt=''
-                width={24}
-                height={24}
+                width={width_height}
+                height={width_height}
                 loading='eager'
               />
             </Link>
-            <Link href={"/"}>
+            <Link href={"/instagram.com/aljazaranews"}>
               <Image
-                src='insta-icon-white.svg'
+                src='/insta-icon-white.svg'
                 alt=''
-                width={24}
-                height={24}
+                width={width_height}
+                height={width_height}
                 loading='eager'
               />
             </Link>
@@ -61,13 +63,13 @@ export default function NavigationComponent() {
               <Link href='/business'>المال والأعمال</Link>
             </li>
             <li>
-              <Link href='/tech'>التكنولوجيا</Link>
+              <Link href='/technology'>التكنولوجيا</Link>
             </li>
             <li>
-              <Link href='/tech'>مقالات تثقيفية</Link>
+              <Link href='/culture'>مقالات تثقيفية</Link>
             </li>
             <li>
-              <Link href='/tech'>دليل المهاجر</Link>
+              <Link href='/immigration'>دليل المهاجر</Link>
             </li>
           </ul>
         </div>
