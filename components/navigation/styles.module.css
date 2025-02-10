@@ -47,8 +47,20 @@
   gap: 34px;
 }
 
-.navBottomToggler {
-  border: 1px solid red;
+.navBottomToggler button {
+  border: 1px solid #000;
+  background-color: #0d1828;
+  border-radius: 55px;
+  height: 42px;
+  width: 42px;
+}
+
+.navBottomToggler button img {
+  height: 24px;
+}
+
+.navBottomToggler button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navBottomLinks {
@@ -56,7 +68,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-grow: 1;
   list-style: none;
   padding: 21px;
@@ -66,10 +78,9 @@
   min-width: 100%;
   padding: 13px 21px;
   border-radius: 13px;
-  border: solid #000 1px;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navBottom a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }

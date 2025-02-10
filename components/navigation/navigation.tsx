@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 import Image from "next/image";
+import * as motion from "motion/react-client";
 
 export default function NavigationComponent() {
   const width_height = 18;
@@ -21,7 +22,15 @@ export default function NavigationComponent() {
             />
           </Link>
 
-          <div className={styles.socialLinks}>
+          <motion.div
+            className={styles.socialLinks}
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              duration: 1,
+            }}
+          >
             <Link href={"/x.com/aljazaranews"}>
               <Image
                 src='/x-icon-white.svg'
@@ -49,16 +58,26 @@ export default function NavigationComponent() {
                 loading='eager'
               />
             </Link>
-          </div>
+          </motion.div>
         </div>
 
         {/* Bottom */}
-        <div className={styles.navBottom}>
-          {/* <div className={styles.navBottomToggler}> */}
-          {/* <button>
-              <Image src='aljazara.svg' alt='' width={100} height={100} />
-            </button> */}
-          {/* </div> */}
+        <motion.div
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.5,
+            type: "spring",
+            duration: 1.2,
+            staggerChildren: 0.5,
+          }}
+          className={styles.navBottom}
+        >
+          <div className={styles.navBottomToggler}>
+            <button>
+              <Image src='/burger-menu-2.svg' alt='' width={34} height={34} />
+            </button>
+          </div>
           <ul className={styles.navBottomLinks}>
             <li>
               <Link href='/articles'>كل المقالات</Link>
@@ -76,7 +95,7 @@ export default function NavigationComponent() {
               <Link href='/immigrant'>دليل المهاجر</Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
