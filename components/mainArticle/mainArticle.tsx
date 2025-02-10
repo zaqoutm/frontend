@@ -1,21 +1,18 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
 import Link from "next/link";
-
-interface Article {
-  title: string;
-  src: string;
-  imgTag: string;
-  contentShort: string;
-}
+import { Article } from "../../interfaces/Aricle";
 
 export default function MainArticle(article: Article) {
   return (
-    <Link href='/articles/1234' className={styles.main}>
+    <Link href={`/articles/${article.documentId}`} className={styles.main}>
       {/* iamge */}
       <div className={styles.imageContainer}>
+        <span>{article.id}</span>
+        <span>{article.documentId}</span>
+
         <Image
-          src={article.src ? article.src : "/xxx.png"}
+          src={article.imgUri ? article.imgUri : "/xxx.png"}
           alt={article.imgTag}
           width={500}
           height={500}
@@ -25,7 +22,7 @@ export default function MainArticle(article: Article) {
       {/* article title */}
       <div className={styles.titleContainer}>
         <h1>{article.title ? article.title : "loading..."}</h1>
-        <p>{article.contentShort ? article.contentShort : "loading..."}</p>
+        <p>{article.content ? article.content : "loading..."}</p>
       </div>
     </Link>
   );

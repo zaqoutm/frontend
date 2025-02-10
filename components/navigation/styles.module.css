@@ -57,6 +57,7 @@
 
 .navBottomToggler button img {
   height: 24px;
+  width: auto;
 }
 
 .navBottomToggler button:hover {
