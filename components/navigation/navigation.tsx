@@ -17,6 +17,7 @@ export default function NavigationComponent() {
               width={50}
               height={50}
               loading='eager'
+              property='true'
             />
           </Link>
 

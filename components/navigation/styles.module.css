@@ -2,31 +2,26 @@
   background-color: var(--nav-bg);
   color: #fff;
   min-height: 200px;
-  max-height: 200px;
 }
 
 .navContainer {
   max-width: 1200px;
-  margin: 0 auto;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  margin-inline: auto;
 }
 
 .navTop,
 .navBottom {
+  border: 1px solid red;
   flex-grow: 1;
-  max-height: 100px;
+  min-height: 100px;
   display: flex;
   padding: 0px 55px;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Top nav */
 /* logo + social media */
-.navTop {
-}
-
 .logo {
   height: auto;
   width: 100px;
@@ -46,6 +41,7 @@
   max-height: 50%;
 }
 
+/* Bottom nav */
 /* toggler + links */
 .navBottom {
   /* border: 1px solid #000; */
@@ -58,18 +54,17 @@
 
 .navBottomLinks {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 18px;
+  gap: 2rem;
   flex-grow: 1;
   list-style: none;
   padding: 21px;
 }
 
-.navBottomLinks li {
-}
-
 .navBottomLinks a {
+  min-width: 100%;
   padding: 13px 21px;
   border-radius: 13px;
   border: solid #000 1px;
