@@ -13,7 +13,7 @@ export default function MainArticle(article: Article) {
 
         <Image
           src={article.imgUri ? article.imgUri : "/xxx.png"}
-          alt={article.imgTag}
+          alt={article.imgTag ? article.imgTag : ""}
           width={500}
           height={500}
           property='false'
