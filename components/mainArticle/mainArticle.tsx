@@ -19,6 +19,7 @@ export default function MainArticle(article: Article) {
           alt={article.imgTag}
           width={500}
           height={500}
+          property='false'
         />
       </div>
       {/* article title */}

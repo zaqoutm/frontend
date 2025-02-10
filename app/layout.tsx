@@ -19,8 +19,8 @@ const notoKufi = Noto_Kufi_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "Aljazara Home",
-  description: "Aljazara news webiste",
+  title: "Aljazara الجزرة نيوز",
+  description: "Aljazara news webiste | أخبار الجزرة نيوز",
 };
 
 export default function RootLayout({

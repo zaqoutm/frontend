@@ -1,0 +1,9 @@
+.header {
+  border-top: 1px solid #000;
+  background-color: var(--nav-bg);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}

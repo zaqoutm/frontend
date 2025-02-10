@@ -1,5 +1,6 @@
 .articles {
-  margin: 20px 0;
-  background-color: #f2f2f2;
-  padding: 34px;
+  padding: 21px 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  /* border: 3px solid red; */
 }

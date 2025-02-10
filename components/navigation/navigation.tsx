@@ -17,7 +17,7 @@ export default function NavigationComponent() {
               width={50}
               height={50}
               loading='eager'
-              property='true'
+              property='false'
             />
           </Link>
 
@@ -61,16 +61,19 @@ export default function NavigationComponent() {
           {/* </div> */}
           <ul className={styles.navBottomLinks}>
             <li>
+              <Link href='/articles'>كل المقالات</Link>
+            </li>
+            <li>
               <Link href='/business'>المال والأعمال</Link>
             </li>
             <li>
               <Link href='/technology'>التكنولوجيا</Link>
             </li>
             <li>
-              <Link href='/culture'>مقالات تثقيفية</Link>
+              <Link href='/cultural'>مقالات تثقيفية</Link>
             </li>
             <li>
-              <Link href='/immigration'>دليل المهاجر</Link>
+              <Link href='/immigrant'>دليل المهاجر</Link>
             </li>
           </ul>
         </div>
