@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ar'>
-      <body className={`${[almarai.variable, notoKufi.variable]}`}>
+      <body className={`${almarai.variable} ${notoKufi.variable}`}>
         <NavigationComponent />
         <div className='children'>{children}</div>
         <FooterComponent />

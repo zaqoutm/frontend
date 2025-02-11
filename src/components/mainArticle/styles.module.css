@@ -5,26 +5,26 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  min-height: 490px;
+  min-height: 440px;
   max-width: 793px;
   overflow: hidden;
+  margin-bottom: 21px;
 }
 
 .imageContainer {
+  border: 1px solid var(--border);
   overflow: hidden;
-  max-height: 400px;
+  border-radius: 13px;
+  display: flex;
 }
 
 .imageContainer img {
-  height: auto;
   object-fit: cover;
   min-width: 800px;
-  max-height: 400px;
-  background-color: #f2f2f2;
+  height: 100%;
 }
 
 .titleContainer {
-  border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
   gap: 13px;
@@ -32,6 +32,10 @@
   padding: 16px 21px;
 }
 
-.titleContainer p {
+.badge {
   color: var(--secondary-text);
+  background-color: #f2f2f2;
+  border-radius: 24px;
+  padding: 5px 16px;
+  width: fit-content;
 }
