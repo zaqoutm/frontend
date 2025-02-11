@@ -2,6 +2,7 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import * as motion from "motion/react-client";
+import { stagger } from "motion";
 
 export default function NavigationComponent() {
   const width_height = 18;
@@ -22,15 +23,7 @@ export default function NavigationComponent() {
             />
           </Link>
 
-          <motion.div
-            className={styles.socialLinks}
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: "spring",
-              duration: 1,
-            }}
-          >
+          <div className={styles.socialLinks}>
             <Link href={"/x.com/aljazaranews"}>
               <Image
                 src='/x-icon-white.svg'
@@ -58,18 +51,16 @@ export default function NavigationComponent() {
                 loading='eager'
               />
             </Link>
-          </motion.div>
+          </div>
         </div>
 
         {/* Bottom */}
         <motion.div
-          initial={{ y: 10, opacity: 0 }}
+          initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
-            delay: 0.5,
             type: "spring",
-            duration: 1.2,
-            staggerChildren: 0.5,
+            duration: 0.5,
           }}
           className={styles.navBottom}
         >
@@ -78,23 +69,13 @@ export default function NavigationComponent() {
               <Image src='/burger-menu-2.svg' alt='' width={34} height={34} />
             </button>
           </div>
-          <ul className={styles.navBottomLinks}>
-            <li>
-              <Link href='/articles'>كل المقالات</Link>
-            </li>
-            <li>
-              <Link href='/business'>المال والأعمال</Link>
-            </li>
-            <li>
-              <Link href='/technology'>التكنولوجيا</Link>
-            </li>
-            <li>
-              <Link href='/cultural'>مقالات تثقيفية</Link>
-            </li>
-            <li>
-              <Link href='/immigrant'>دليل المهاجر</Link>
-            </li>
-          </ul>
+          <div className={styles.navBottomLinks}>
+            <Link href='/articles'>كل المقالات</Link>
+            <Link href='/business'>المال والأعمال</Link>
+            <Link href='/technology'>التكنولوجيا</Link>
+            <Link href='/cultural'>مقالات تثقيفية</Link>
+            <Link href='/immigrant'>دليل المهاجر</Link>
+          </div>
         </motion.div>
       </div>
     </div>

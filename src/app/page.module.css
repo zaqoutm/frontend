@@ -4,3 +4,12 @@
   margin-inline: auto;
   max-width: 1200px;
 }
+
+.articlesSection {
+  /* max-width: fit-content; */
+  /* border: 1px solid; */
+}
+
+.articlesSection h1 {
+  margin-bottom: 8px;
+}

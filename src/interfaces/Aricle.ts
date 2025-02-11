@@ -14,6 +14,6 @@ export interface Article {
   title?: string;
   content?: string;
   section?: Section;
-  featured?: boolean;
+  isFeatured?: boolean;
   isMain?: boolean;
 }

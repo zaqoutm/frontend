@@ -1,12 +1,15 @@
 import Image from "next/image";
-import styles from "./styles.module.css";
 import Link from "next/link";
 import { Article } from "../../interfaces/Aricle";
+import styles from "./styles.module.css";
 import config from "../../config";
 
-export default function MainArticle(article: Article) {
+export default function ArticleCard(article: Article) {
   return (
-    <Link href={`/articles/${article.documentId}`} className={styles.main}>
+    <Link
+      href={`/articles/${article.documentId}`}
+      className={`${styles.main} ${article.isFeatured && styles.featured}`}
+    >
       {/* iamge */}
       <div className={styles.imageContainer}>
         <Image
