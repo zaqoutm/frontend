@@ -1,0 +1,30 @@
+.adContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  padding: 24px 0;
+  max-width: 377px;
+}
+
+.ad_300_600 {
+  min-height: 600px;
+  max-width: 300px;
+  background-color: var(--info);
+}
+
+.ad_250_600 {
+  min-height: 600px;
+  max-width: 250px;
+  background-color: var(--info);
+}
+
+.ad_250_250 {
+  min-height: 250px;
+  max-width: 250px;
+  background-color: var(--info);
+}

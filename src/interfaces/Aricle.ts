@@ -9,8 +9,11 @@ export interface Article {
   publishedAt?: string;
 
   //
-  photo?: { url: string };
-  photoText?: string;
+  photo?: {
+    alternativeText: string;
+    caption: string;
+    url: string;
+  };
   title?: string;
   content?: string;
   section?: Section;

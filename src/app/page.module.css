@@ -5,11 +5,33 @@
   max-width: 1200px;
 }
 
-.articlesSection {
-  /* max-width: fit-content; */
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+/*  */
+.main {
   /* border: 1px solid; */
+  flex-grow: 1;
+}
+
+.articlesSection {
 }
 
 .articlesSection h1 {
   margin-bottom: 8px;
+}
+
+/*  */
+.featuredSection {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 13px;
+}
+
+.x {
+  min-height: 100px;
+  background-color: antiquewhite;
 }

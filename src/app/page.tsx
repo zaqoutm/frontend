@@ -3,6 +3,7 @@ import loadArticles, { ResponseStrapi } from "../data/loaders";
 import MainArticle from "../components/mainArticle/mainArticle";
 import ArticleCard from "../components/articleCard/page";
 import * as motion from "motion/react-client";
+import AdContainer from "../components/ads/page";
 
 export default async function Home() {
   // main article
@@ -16,32 +17,25 @@ export default async function Home() {
     "?populate=*&sort[1]=publishedAt:desc"
   );
   const allArticles = req.data;
-  console.log(allArticles);
 
   // by section
 
   return (
     <div className={styles.page}>
-      <main className={styles.main}>
-        {/* big article */}
-
-        <motion.div
-          initial={{ y: -5, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            type: "spring",
-            delay: 0.2,
-            duration: 2,
-          }}
-        >
-          <MainArticle {...mainArticle[0]} />
-        </motion.div>
-
-        <div>
-          {/* featured allArticles */}
-          <div></div>
-
-          {/* sections */}
+      {/* big article + sections */}
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <motion.div
+            initial={{ y: -5, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              delay: 0.2,
+              duration: 2,
+            }}
+          >
+            <MainArticle {...mainArticle[0]} />
+          </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -63,8 +57,20 @@ export default async function Home() {
               />
             ))}
           </motion.div>
-        </div>
-      </main>
+        </main>
+
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            type: "spring",
+            duration: 6,
+          }}
+          className={styles.featuredSection}
+        >
+          <AdContainer width={250} height={600} />
+        </motion.div>
+      </div>
     </div>
   );
 }

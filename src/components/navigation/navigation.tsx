@@ -2,7 +2,6 @@ import Link from "next/link";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { stagger } from "motion";
 
 export default function NavigationComponent() {
   const width_height = 18;
@@ -70,6 +69,7 @@ export default function NavigationComponent() {
             </button>
           </div>
           <div className={styles.navBottomLinks}>
+            <Link href='/comps'>Components</Link>
             <Link href='/articles'>كل المقالات</Link>
             <Link href='/business'>المال والأعمال</Link>
             <Link href='/technology'>التكنولوجيا</Link>

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Article } from "../../interfaces/Aricle";
 import styles from "./styles.module.css";
-import config from "../../config";
 
 export default function ArticleCard(article: Article) {
   return (
@@ -13,10 +12,8 @@ export default function ArticleCard(article: Article) {
       {/* iamge */}
       <div className={styles.imageContainer}>
         <Image
-          src={
-            article.photo?.url ? config.baseUrl + article.photo.url : "/xxx.png"
-          }
-          alt={article.photoText ? article.photoText : ""}
+          src={article.photo ? article.photo.url : "/xxx.png"}
+          alt={article.photo ? article.photo.alternativeText : "صورة"}
           width={200}
           height={200}
           property='false'
