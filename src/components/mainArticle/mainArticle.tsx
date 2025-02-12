@@ -12,7 +12,11 @@ export default function MainArticle(article: Article) {
       <div className={styles.imageContainer}>
         <Image
           src={article.photo ? article.photo.url : "/xxx.png"}
-          alt={article.photo ? article.photo.alternativeText : "صورة"}
+          alt={
+            article.photo && article.photo.alternativeText
+              ? article.photo.alternativeText
+              : "Picture text"
+          }
           width={200}
           height={200}
           property='false'
