@@ -4,4 +4,39 @@
   padding: 24px;
   min-height: 200px;
   max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.footerLinks a:hover {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLogo img {
+  height: auto;
+}
+
+.footerLogoSlug {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
