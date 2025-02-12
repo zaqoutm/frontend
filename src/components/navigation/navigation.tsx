@@ -62,14 +62,14 @@ export default function NavigationComponent() {
           }}
           className={styles.navBottom}
         >
-          <div className={styles.navBottomToggler}>
+          {/* <div className={styles.navBottomToggler}>
             <button>
               <Image src='/burger-menu-2.svg' alt='' width={34} height={34} />
             </button>
-          </div>
+          </div> */}
           <div className={styles.navBottomLinks}>
-            <Link href='/comps'>Components</Link>
-            <Link href='/articles'>كل المقالات</Link>
+            {/* <Link href='/comps'>Components</Link> */}
+            {/* <Link href='/articles'>كل المقالات</Link> */}
             <Link href='/business'>المال والأعمال</Link>
             <Link href='/technology'>التكنولوجيا</Link>
             <Link href='/cultural'>مقالات تثقيفية</Link>

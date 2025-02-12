@@ -40,6 +40,16 @@
   flex-grow: 1;
 }
 
+.titleContainerBadges {
+  display: flex;
+  gap: 13px;
+}
+
+.titleContainerBadges img {
+  width: auto;
+  max-height: 18px;
+}
+
 .badge {
   color: var(--secondary-text);
   background-color: #f2f2f2;

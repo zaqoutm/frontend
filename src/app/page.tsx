@@ -3,6 +3,7 @@ import loadArticles, { ResponseStrapi } from "../data/loaders";
 import MainArticle from "../components/mainArticle/mainArticle";
 import ArticleCard from "../components/articleCard/page";
 import * as motion from "motion/react-client";
+import Link from "next/link";
 
 export default async function Home() {
   // main article
@@ -13,9 +14,14 @@ export default async function Home() {
 
   // all articles
   const req: ResponseStrapi = await loadArticles(
-    "?populate=*&sort[1]=publishedAt:desc"
+    "?populate=*&sort[1]=publishedAt:desc&filters[section][title][$eq]=business"
   );
-  const allArticles = req.data;
+  const allBusinessArticles = req.data;
+
+  const req1: ResponseStrapi = await loadArticles(
+    "?populate=*&sort[1]=publishedAt:desc&filters[section][title][$eq]=technology"
+  );
+  const allTechArticles = req1.data;
 
   return (
     <div className={styles.page}>
@@ -33,22 +39,42 @@ export default async function Home() {
           >
             <MainArticle {...mainArticle[0]} />
           </motion.div>
+
+          {/* business */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ y: 40 }}
+            animate={{ y: 0 }}
             transition={{
               type: "spring",
-              duration: 5,
+              duration: 3,
             }}
             className={styles.articlesSection}
           >
             <div className={styles.sectioTitle}>
               <h1>المال والأعمال</h1>
             </div>
-            {allArticles.map((a, i) => (
+            <div className={styles.articlesList}>
+              {allBusinessArticles.map((a, i) => (
+                <ArticleCard key={a.documentId} article={a} borderTop={i > 0} />
+              ))}
+              <Link className={styles.articlesSectionButton} href={"/business"}>
+                إقرأ المزيد
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* tech */}
+          <div className={styles.sectioTitle}>
+            <h1>تكنولوجيا</h1>
+          </div>
+          <div className={styles.articlesList}>
+            {allTechArticles.map((a, i) => (
               <ArticleCard key={a.documentId} article={a} borderTop={i > 0} />
             ))}
-          </motion.div>
+            <Link className={styles.articlesSectionButton} href={"/technology"}>
+              إقرأ المزيد
+            </Link>
+          </div>
         </main>
 
         <motion.div

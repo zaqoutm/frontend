@@ -17,8 +17,30 @@
 }
 
 .articlesSection {
-  /* border: 1px solid; */
   padding: 21px 0;
+}
+
+.articlesList {
+  /* border: 1px solid; */
+  margin-bottom: 21px;
+}
+
+.articlesSectionButton {
+  display: block;
+  max-width: fit-content;
+  background-color: var(--foreground);
+  color: #fff;
+  font-weight: 600;
+  padding: 13px 42px;
+  border-radius: 34px;
+  border: 1px solid;
+  margin-top: 12px;
+  border: 1px solid #000;
+  margin-inline: auto;
+}
+
+.articlesSectionButton:hover {
+  background-color: var(--foreground-hover);
 }
 
 .sectioTitle {
@@ -26,7 +48,6 @@
   padding: 12px;
   border-radius: 12px;
   max-width: 690px;
-  margin-bottom: 8px;
 }
 
 .sectioTitle h1 {
