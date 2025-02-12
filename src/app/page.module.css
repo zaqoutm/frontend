@@ -17,10 +17,21 @@
 }
 
 .articlesSection {
+  /* border: 1px solid; */
+  padding: 21px 0;
 }
 
-.articlesSection h1 {
+.sectioTitle {
+  background-color: var(--fb-color);
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 690px;
   margin-bottom: 8px;
+}
+
+.sectioTitle h1 {
+  color: var(--secondary);
+  font-weight: 600;
 }
 
 /*  */

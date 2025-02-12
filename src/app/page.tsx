@@ -45,7 +45,9 @@ export default async function Home() {
             }}
             className={styles.articlesSection}
           >
-            <h1>المال والأعمال</h1>
+            <div className={styles.sectioTitle}>
+              <h1>المال والأعمال</h1>
+            </div>
             {allArticles.map((a) => (
               <ArticleCard
                 key={a.documentId}
@@ -68,7 +70,8 @@ export default async function Home() {
           }}
           className={styles.featuredSection}
         >
-          <AdContainer width={250} height={600} />
+          {/* <AdContainer width={250} height={600} /> */}
+          <h1>Featured articles</h1>
         </motion.div>
       </div>
     </div>
