@@ -4,14 +4,12 @@ import Link from "next/link";
 import { Article } from "../../interfaces/Aricle";
 
 export default function MainArticle(article: Article) {
-  console.log(article);
-
   return (
     <Link href={`/articles/${article.documentId}`} className={styles.main}>
       {/* iamge */}
       <div className={styles.imageContainer}>
         <Image
-          src={article.photo ? article.photo.url : "/xxx.png"}
+          src={article.photo ? article.photo.url : "/aljazara.svg"}
           alt={
             article.photo && article.photo.alternativeText
               ? article.photo.alternativeText
@@ -19,7 +17,7 @@ export default function MainArticle(article: Article) {
           }
           width={200}
           height={200}
-          property='false'
+          priority={true}
         />
       </div>
       {/* article title */}

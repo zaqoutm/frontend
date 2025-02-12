@@ -14,11 +14,10 @@ export default function NavigationComponent() {
           <Link href={"/"} className={styles.logo}>
             <Image
               src='/aljazara.svg'
-              alt=''
+              alt='aljazara logo'
               width={50}
               height={50}
-              loading='eager'
-              property='false'
+              priority={true}
             />
           </Link>
 

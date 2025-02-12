@@ -3,7 +3,6 @@ import loadArticles, { ResponseStrapi } from "../data/loaders";
 import MainArticle from "../components/mainArticle/mainArticle";
 import ArticleCard from "../components/articleCard/page";
 import * as motion from "motion/react-client";
-import AdContainer from "../components/ads/page";
 
 export default async function Home() {
   // main article
@@ -17,8 +16,6 @@ export default async function Home() {
     "?populate=*&sort[1]=publishedAt:desc"
   );
   const allArticles = req.data;
-
-  // by section
 
   return (
     <div className={styles.page}>
@@ -48,15 +45,8 @@ export default async function Home() {
             <div className={styles.sectioTitle}>
               <h1>المال والأعمال</h1>
             </div>
-            {allArticles.map((a) => (
-              <ArticleCard
-                key={a.documentId}
-                title={a.title}
-                documentId={a.documentId}
-                photo={a.photo}
-                section={a.section}
-                isFeatured={a.isFeatured}
-              />
+            {allArticles.map((a, i) => (
+              <ArticleCard key={a.documentId} article={a} borderTop={i > 0} />
             ))}
           </motion.div>
         </main>

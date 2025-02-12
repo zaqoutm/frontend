@@ -16,6 +16,7 @@
   --green-light: #e6fead;
 
   --border: #f2f2f2;
+  --border-dark: #ccc;
 
   --nav-bg: #102039;
   --fb-color: #f2f4f7;
@@ -101,11 +102,20 @@ a {
 .loadingPageContainer {
   max-width: 1200px;
   margin-inline: auto;
-  padding: 55px;
+  padding: 55px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.loadingPageText {
+  margin-top: 24px;
+  border-top: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 13px;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .loader {
@@ -129,7 +139,7 @@ a {
   left: 0;
   width: 10px;
   height: 10px;
-  background: #de3500;
+  background: var(--orange);
   border-radius: 50%;
   animation: ballStepUp 4s linear infinite;
 }
