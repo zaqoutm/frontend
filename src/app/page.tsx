@@ -4,6 +4,7 @@ import MainArticle from "../components/mainArticle/mainArticle";
 import ArticleCard from "../components/articleCard/page";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import ArticleFeaturedCard from "../components/articleFeaturedCard/page";
 
 export default async function Home() {
   // main article
@@ -22,6 +23,11 @@ export default async function Home() {
     "?populate=*&sort[1]=publishedAt:desc&filters[section][title][$eq]=technology"
   );
   const allTechArticles = req1.data;
+
+  const req2: ResponseStrapi = await loadArticles(
+    "?populate=*&sort[1]=publishedAt:desc&filters[isFeatured][$eq]=true"
+  );
+  const allFeaturedArticles = req2.data;
 
   return (
     <div className={styles.page}>
@@ -87,7 +93,16 @@ export default async function Home() {
           className={styles.featuredSection}
         >
           {/* <AdContainer width={250} height={600} /> */}
-          <h1>Featured articles</h1>
+          <div className={styles.articlesList}>
+            {allFeaturedArticles.map((a, i) => (
+              <ArticleFeaturedCard
+                key={a.documentId}
+                article={a}
+                borderTop={i > 0}
+              />
+            ))}
+          </div>
+          {/*  */}
         </motion.div>
       </div>
     </div>

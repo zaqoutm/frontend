@@ -60,10 +60,9 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 13px;
-}
-
-.x {
-  min-height: 100px;
-  background-color: antiquewhite;
+  height: fit-content;
+  background-color: var(--fb);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
 }
