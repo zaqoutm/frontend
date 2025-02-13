@@ -89,3 +89,20 @@
 .navBottomToggler button:hover {
   background-color: var(--orange);
 }
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .navigation {
+    display: none;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+}

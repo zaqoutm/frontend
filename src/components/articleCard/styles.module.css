@@ -58,3 +58,38 @@
   padding: 5px 16px;
   width: fit-content;
 }
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    max-width: 100%;
+  }
+  .imageContainer {
+    width: 150px;
+    padding: 21px 5px;
+  }
+  .imageContainer img {
+    height: 80px;
+    border: none;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .imageContainer {
+    width: 100px;
+    padding: 21px 5px;
+  }
+  .imageContainer img {
+    height: 60px;
+  }
+  .titleContainer {
+    padding: 21px 5px;
+  }
+}

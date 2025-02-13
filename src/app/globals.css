@@ -21,18 +21,63 @@
 
   --nav-bg: #102039;
   --fb-color: #f2f4f7;
+  --gray-bg: #f4f4f5;
 }
 
-/* light */
+/*  */
+/*  */
+/* Media Queries [desktop, small desktop, tablet, phone]*/
+/*  */
+/*  */
+.navContainer {
+  padding-top: 21px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 
-/* dark */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.views {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: red;
+  z-index: 1;
+}
+.viewDesktop {
+  display: none;
+  @media (min-width: 1060px) {
+    display: flex;
   }
 }
 
+/* betweem 960 -> 1060 */
+.viewSmallDesktop {
+  display: none;
+  @media screen and (max-width: 1059px) and (min-width: 960px) {
+    display: flex;
+  }
+}
+
+.viewTablet {
+  display: none;
+  @media screen and (max-width: 959px) and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.viewPhone {
+  display: none;
+  @media (max-width: 767px) {
+    display: flex;
+  }
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 html,
 body {
   margin: 0 auto;
@@ -92,14 +137,9 @@ a {
   font-family: Arial, Helvetica, "Noto Kufi Arabic", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/*  loader  */
 /*  */
+/*  */
+/*  loader  */
 /*  */
 /*  */
 .loadingPageContainer {
@@ -217,4 +257,21 @@ a {
   100% {
     transform: translate(0, 0);
   }
+}
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+  .navContainer {
+    display: none;
+  }
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
 }

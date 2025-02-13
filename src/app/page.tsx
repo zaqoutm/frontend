@@ -31,8 +31,43 @@ export default async function Home() {
 
   return (
     <div className={styles.page}>
-      {/* big article + sections */}
+      <div className='views'>
+        <div className={"viewDesktop"}>
+          <h1>desktop</h1>
+        </div>
+        <div className={"viewSmallDesktop"}>
+          <h1>small desktop</h1>
+        </div>
+        <div className={"viewTablet"}>
+          <h1>tablet</h1>
+        </div>
+        <div className={"viewPhone"}>
+          <h1>phone</h1>
+        </div>
+      </div>
+
+      {/* switcher on tablet */}
+      <motion.div
+        className={styles.switcher}
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          visualDuration: 1,
+          bounce: 0.4,
+        }}
+      >
+        <Link href={"#"} className={styles.logo}>
+          كل الأخبار
+        </Link>
+        <Link href={"#"} className={styles.logo}>
+          الأخبار المميزة
+        </Link>
+      </motion.div>
+
+      {/* contains (featured) and (main,articles) */}
       <div className={styles.container}>
+        {/*  */}
+        {/* Main article + sections */}
         <main className={styles.main}>
           <motion.div
             initial={{ y: -5, opacity: 0 }}
@@ -45,7 +80,6 @@ export default async function Home() {
           >
             <MainArticle {...mainArticle[0]} />
           </motion.div>
-
           {/* business */}
           <motion.div
             initial={{ y: 40 }}
@@ -83,6 +117,8 @@ export default async function Home() {
           </div>
         </main>
 
+        {/*  */}
+        {/* Featured articles */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

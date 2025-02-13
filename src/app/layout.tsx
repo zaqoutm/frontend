@@ -3,6 +3,7 @@ import { Almarai, Noto_Kufi_Arabic } from "next/font/google";
 import "./globals.css";
 import NavigationComponent from "../components/navigation/navigation";
 import FooterComponent from "../components/footer/footer";
+import SmallNavigation from "../components/smallNav/page";
 
 // Fonts
 // use variables in css
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang='ar'>
       <body className={`${almarai.variable} ${notoKufi.variable}`}>
+        <SmallNavigation />
         <NavigationComponent />
         <div className='children'>{children}</div>
         <FooterComponent />
