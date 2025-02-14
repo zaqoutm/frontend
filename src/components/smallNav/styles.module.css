@@ -2,14 +2,14 @@
   max-width: 340px;
   min-height: 55px;
   color: #000;
-  background-color: rgba(237, 237, 237, 0.72);
+  background-color: rgba(237, 237, 237, 70%);
   margin-inline: auto;
   padding: 8px 34px 8px 12px;
   border-radius: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(18);
+  backdrop-filter: blur(10px);
 }
 
 .navLogoImage,
