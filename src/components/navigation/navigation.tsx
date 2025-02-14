@@ -22,7 +22,7 @@ export default function NavigationComponent() {
           </Link>
 
           <div className={styles.socialLinks}>
-            <Link href={"/x.com/aljazaranews"}>
+            <Link href={"https://x.com/aljazaranews"}>
               <Image
                 src='/x-icon-white.svg'
                 alt=''
@@ -31,7 +31,7 @@ export default function NavigationComponent() {
                 loading='eager'
               />
             </Link>
-            <Link href={"/facebook.com/aljazaranews"}>
+            <Link href={"https://facebook.com/aljazaranews"}>
               <Image
                 src='/fb-icon-white.svg'
                 alt=''
@@ -40,7 +40,7 @@ export default function NavigationComponent() {
                 loading='eager'
               />
             </Link>
-            <Link href={"/instagram.com/aljazaranews"}>
+            <Link href={"https://instagram.com/aljazaranews"}>
               <Image
                 src='/insta-icon-white.svg'
                 alt=''
