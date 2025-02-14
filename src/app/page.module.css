@@ -59,23 +59,22 @@
 /* switcher */
 .switcher {
   background-color: var(--gray-bg);
-  max-width: 300px;
-  overflow-x: scroll;
+  max-width: fit-content;
   min-height: 55px;
-  padding: 8px;
+  padding: 5px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
   margin-inline: auto;
   margin-bottom: 24px;
-  border-radius: 24px;
+  border-radius: 8px;
 }
 
 .switcher a {
   background-color: #fff;
   border: 1px solid var(--border-dark);
-  border-radius: 24px;
+  border-radius: 8px;
   padding: 8px 34px;
   flex-shrink: 0;
 }
