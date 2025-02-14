@@ -44,7 +44,7 @@ export default function ArticleFeaturedCard({ article, borderTop }: Props) {
                 priority={true}
               />
             )}
-            <p className={styles.badge}>{article.section?.title}</p>
+            <p className={styles.badge}>{article.section?.titleAr}</p>
           </div>
         ) : (
           ""

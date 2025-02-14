@@ -35,16 +35,16 @@ export default function ArticleCard({ article, borderTop }: Props) {
         <h1>{article.title}</h1>
         {article.section ? (
           <div className={styles.titleContainerBadges}>
+            <p className={styles.badge}>{article.section?.titleAr}</p>
             {article.isFeatured && (
               <Image
                 src='/favorite-featured-icon.svg'
                 alt='featured'
-                width={18}
-                height={18}
+                width={12}
+                height={12}
                 priority={true}
               />
             )}
-            <p className={styles.badge}>{article.section?.title}</p>
           </div>
         ) : (
           ""

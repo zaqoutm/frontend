@@ -5,6 +5,7 @@ import ArticleCard from "../components/articleCard/page";
 import * as motion from "motion/react-client";
 import Link from "next/link";
 import ArticleFeaturedCard from "../components/articleFeaturedCard/page";
+import Image from "next/image";
 
 export default async function Home() {
   // main article
@@ -56,12 +57,10 @@ export default async function Home() {
           bounce: 0.4,
         }}
       >
-        <Link href={"#"} className={styles.logo}>
-          كل الأخبار
+        <Link href={"#"} className={styles.activeSwitch}>
+          آخر الأخبار
         </Link>
-        <Link href={"#"} className={styles.logo}>
-          الأخبار المميزة
-        </Link>
+        <Link href={"#"}>أخبار مميزة</Link>
       </motion.div>
 
       {/* contains (featured) and (main,articles) */}
@@ -91,29 +90,45 @@ export default async function Home() {
             className={styles.articlesSection}
           >
             <div className={styles.sectioTitle}>
-              <h1>المال والأعمال</h1>
+              <h1>أخبار المال والأعمال</h1>
+              <Image
+                src={"/chevronLeft.svg"}
+                alt='chevron icon'
+                width={18}
+                height={18}
+              />
             </div>
             <div className={styles.articlesList}>
-              {allBusinessArticles.map((a, i) => (
-                <ArticleCard key={a.documentId} article={a} borderTop={i > 0} />
+              {allBusinessArticles.map((a) => (
+                <ArticleCard key={a.documentId} article={a} borderTop={true} />
               ))}
-              <Link className={styles.articlesSectionButton} href={"/business"}>
-                إقرأ المزيد
-              </Link>
+              <div className={styles.readMoreBtnContainer}>
+                <Link className={styles.readMoreBtn} href={"/business"}>
+                  إقرأ المزيد
+                </Link>
+              </div>
             </div>
           </motion.div>
 
           {/* tech */}
           <div className={styles.sectioTitle}>
-            <h1>تكنولوجيا</h1>
+            <h1>أخبار التكنولوجيا</h1>
+            <Image
+              src={"/chevronLeft.svg"}
+              alt='chevron icon'
+              width={18}
+              height={18}
+            />
           </div>
           <div className={styles.articlesList}>
-            {allTechArticles.map((a, i) => (
-              <ArticleCard key={a.documentId} article={a} borderTop={i > 0} />
+            {allTechArticles.map((a) => (
+              <ArticleCard key={a.documentId} article={a} borderTop={true} />
             ))}
-            <Link className={styles.articlesSectionButton} href={"/technology"}>
-              إقرأ المزيد
-            </Link>
+            <div className={styles.readMoreBtnContainer}>
+              <Link className={styles.readMoreBtn} href={"/technology"}>
+                إقرأ المزيد
+              </Link>
+            </div>
           </div>
         </main>
 

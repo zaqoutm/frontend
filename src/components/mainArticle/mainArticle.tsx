@@ -24,7 +24,7 @@ export default function MainArticle(article: Article) {
       <div className={styles.titleContainer}>
         <h1>{article.title}</h1>
         {article.section ? (
-          <p className={styles.badge}>{article.section?.title}</p>
+          <p className={styles.badge}>{article.section?.titleAr}</p>
         ) : (
           ""
         )}
