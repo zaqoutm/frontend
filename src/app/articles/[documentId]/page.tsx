@@ -4,6 +4,7 @@ import { getArticleByDocumentId } from "../../../data/articlePageLoaders";
 import { StrapiResponseSingle } from "../../../interfaces/StrapiResponse";
 import Image from "next/image";
 import moment from "moment";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 export default async function ArticlePage({ params }: { params: Promise<{ documentId: string }> }) {
   const x = await params;
@@ -11,7 +12,6 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
   // get the article by document id
   const articleByDocumentId: StrapiResponseSingle = await getArticleByDocumentId(x.documentId);
   const article = articleByDocumentId.data;
-  console.log(article);
 
   // get articles in the same section
   // get mixed news
@@ -21,26 +21,32 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
       {article.title ? <SectionHeader title={article.title} /> : ""}
 
       <div className={styles.container}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={article.photo ? article.photo.url : "/aljazara.svg"}
-            alt={article.photo && article.photo.alternativeText ? article.photo.alternativeText : "Picture text"}
-            width={200}
-            height={200}
-            priority={true}
-          />
-          <p className={styles.imageCaption}>{article.photo?.caption}</p>
-        </div>
-
-        <div className={styles.contentContainer}>
-          <div className={styles.createdAtContainer}>
-            <p>{moment(article.createdAt).locale("ar").format("LLLL")}</p>
+        <div className={styles.mainContainer}>
+          <div>
+            <div className={styles.imageContainer}>
+              <Image
+                src={article.photo ? article.photo.url : "/aljazara.svg"}
+                alt={article.photo && article.photo.alternativeText ? article.photo.alternativeText : "Picture text"}
+                width={200}
+                height={200}
+                priority={true}
+              />
+            </div>
+            <p className={styles.imageCaption}>{article.photo?.caption}</p>
           </div>
 
-          {/* ad */}
+          <div className={styles.contentContainer}>
+            <div className={styles.createdAtContainer}>
+              <p>{moment(article.createdAt).locale("ar").format("LLLL")}</p>
+            </div>
 
-          {/*  */}
-          <div className={styles.content}></div>
+            {/* ad */}
+
+            {/*  */}
+            <div className={styles.content}>
+              <BlocksRenderer content={article.content}></BlocksRenderer>
+            </div>
+          </div>
         </div>
       </div>
     </div>

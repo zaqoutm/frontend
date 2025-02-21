@@ -86,8 +86,9 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, "Noto Kufi Arabic", sans-serif;
+  font-family: "Noto Kufi Arabic", sans-serif, Arial, Helvetica;
   font-size: 16px;
+  color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -96,16 +97,39 @@ body {
   min-height: 90vh;
 }
 
-h1 {
+pre {
+  background-color: #424556;
+  color: #f2f2f2;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  direction: ltr;
+}
+
+blockquote {
+  border-right: 2px solid #ff7f588e;
+  padding: 12px;
+}
+
+h1,
+h2,
+h3,
+h4 {
   font-family: Almarai;
+}
+
+h1 {
   font-size: 21px;
   font-weight: 400;
-  /* font-family: var(--font-almarai); */
   line-height: 1.4;
 }
 
 h2 {
+  font-size: 18px;
   color: var(--secondary-text);
+}
+
+h3 {
   font-size: 16px;
 }
 

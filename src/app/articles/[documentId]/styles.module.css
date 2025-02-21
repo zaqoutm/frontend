@@ -7,15 +7,20 @@
   max-width: 1200px;
 }
 
+.mainContainer {
+  max-width: 690px;
+}
+
 .imageContainer {
+  max-width: 690px;
+  max-height: 340px;
   overflow: hidden;
-  max-width: 600px;
 }
 
 .imageContainer img {
   object-fit: cover;
-  width: 100%;
   height: auto;
+  width: 100%;
 }
 
 .imageCaption {
@@ -36,7 +41,19 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 21px;
+}
+.content h1 {
+  font-size: 34px;
+}
+.content h2 {
+  font-size: 24px;
+}
+
+.content a {
+  color: var(--accent);
+}
+.content ul {
+  list-style-position: inside;
 }
 
 /*  Responsivness  */
@@ -54,8 +71,14 @@
   .container {
     padding: 0;
   }
+  .imageContainer {
+    max-width: 100%;
+  }
   .imageCaption {
     padding: 5px 16px;
+  }
+  .mainContainer {
+    max-width: 100%;
   }
   .contentContainer {
     padding: 16px;
