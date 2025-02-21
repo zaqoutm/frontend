@@ -1,14 +1,9 @@
-import { Metadata } from "next";
 import styles from "./styles.module.css";
 import { SectionHeader } from "../../../components/sectionHeader/sectionHeader";
 import { getArticleByDocumentId } from "../../../data/articlePageLoaders";
 import { StrapiResponseSingle } from "../../../interfaces/StrapiResponse";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "articlr title",
-  description: "",
-};
+import moment from "moment";
 
 export default async function ArticlePage({ params }: { params: Promise<{ documentId: string }> }) {
   const x = await params;
@@ -36,10 +31,17 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
           />
           <p className={styles.imageCaption}>{article.photo?.caption}</p>
         </div>
-        <div className={styles.createdAtContainer}>
-          <p>{article.createdAt}</p>
+
+        <div className={styles.contentContainer}>
+          <div className={styles.createdAtContainer}>
+            <p>{moment(article.createdAt).locale("ar").format("LLLL")}</p>
+          </div>
+
+          {/* ad */}
+
+          {/*  */}
+          <div className={styles.content}></div>
         </div>
-        {/* {article.content} */}
       </div>
     </div>
   );

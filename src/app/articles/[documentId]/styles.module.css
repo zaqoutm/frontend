@@ -16,7 +16,6 @@
   object-fit: cover;
   width: 100%;
   height: auto;
-  border: 1px solid var(--border);
 }
 
 .imageCaption {
@@ -25,7 +24,19 @@
 
 .createdAtContainer {
   color: var(--secondary-text);
-  border: 1px solid var(--border);
+}
+
+.contentContainer {
+  padding: 21px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
 }
 
 /*  Responsivness  */
@@ -37,13 +48,19 @@
 }
 /* <=Tablet */
 @media screen and (max-width: 959px) {
-}
-/* <=phone */
-@media screen and (max-width: 767px) {
   .main {
     padding-top: 21px;
   }
   .container {
-    padding: 8px;
+    padding: 0;
   }
+  .imageCaption {
+    padding: 5px 16px;
+  }
+  .contentContainer {
+    padding: 16px;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
 }
