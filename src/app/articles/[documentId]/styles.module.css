@@ -1,10 +1,49 @@
+.main {
+}
+
 .container {
-  padding: 21px 0;
+  padding: 21px;
   margin-inline: auto;
   max-width: 1200px;
 }
-.image {
+
+.imageContainer {
+  overflow: hidden;
+  max-width: 600px;
 }
 
-.content {
+.imageContainer img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+}
+
+.imageCaption {
+  padding: 5px 0;
+}
+
+.createdAtContainer {
+  color: var(--secondary-text);
+  border: 1px solid var(--border);
+}
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .main {
+    padding-top: 21px;
+  }
+  .container {
+    padding: 8px;
+  }
 }

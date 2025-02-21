@@ -181,11 +181,8 @@ a {
   width: 75px;
   height: 100px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(#ddd 50px, transparent 0),
-    linear-gradient(#ddd 50px, transparent 0),
-    linear-gradient(#ddd 50px, transparent 0),
-    linear-gradient(#ddd 50px, transparent 0),
-    linear-gradient(#ddd 50px, transparent 0);
+  background-image: linear-gradient(#ddd 50px, transparent 0), linear-gradient(#ddd 50px, transparent 0), linear-gradient(#ddd 50px, transparent 0),
+    linear-gradient(#ddd 50px, transparent 0), linear-gradient(#ddd 50px, transparent 0);
   background-size: 8px 100%;
   background-position: 0px 90px, 15px 78px, 30px 66px, 45px 58px, 60px 50px;
   animation: pillerPushUp 4s linear infinite;
@@ -286,17 +283,11 @@ a {
 }
 /* <=Tablet */
 @media screen and (max-width: 959px) {
-  .children {
-    padding: 0 20px;
-  }
 }
 /* <=phone */
 @media screen and (max-width: 767px) {
   .navContainer {
     padding: 20px;
     padding-bottom: 0;
-  }
-  .children {
-    padding: 0 20px;
   }
 }

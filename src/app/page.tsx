@@ -6,12 +6,14 @@ import Link from "next/link";
 import Image from "next/image";
 import ArticleCard from "../components/articleCard/page";
 import ArticleFeaturedCard from "../components/articleFeaturedCard/page";
+import { StrapiResponse } from "../interfaces/StrapiResponse";
 
 export default async function Home() {
-  const mainArticlesResponse: service.ResponseStrapi = await service.getMainArticle();
-  const businessArticlesResponse: service.ResponseStrapi = await service.getArticlesBySection("business");
-  const techArticlesResponse: service.ResponseStrapi = await service.getArticlesBySection("technology");
-  const featuredArticlesRes: service.ResponseStrapi = await service.getFeaturedArticles();
+  const mainArticlesResponse: StrapiResponse = await service.getMainArticle();
+  const businessArticlesResponse: StrapiResponse = await service.getArticlesBySection("business");
+  const techArticlesResponse: StrapiResponse = await service.getArticlesBySection("technology");
+  const culturalArticlesResponse: StrapiResponse = await service.getArticlesBySection("cultural");
+  const featuredArticlesRes: StrapiResponse = await service.getFeaturedArticles();
 
   return (
     <div className={styles.page}>
@@ -79,11 +81,26 @@ export default async function Home() {
               </Link>
             </div>
           </div>
+
+          {/* cultural */}
+          <div className={styles.sectioTitle}>
+            <h1>مقالات ثقافية</h1>
+            <Image src={"/chevronLeft.svg"} alt='chevron icon' width={18} height={18} />
+          </div>
+          <div className={styles.articlesList}>
+            {culturalArticlesResponse.data.map((a) => (
+              <ArticleCard key={a.documentId} article={a} borderTop={true} />
+            ))}
+            <div className={styles.readMoreBtnContainer}>
+              <Link className={styles.readMoreBtn} href={"/technology"}>
+                إقرأ المزيد
+              </Link>
+            </div>
+          </div>
         </main>
 
         {/*  */}
         {/* Featured articles */}
-
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

@@ -138,4 +138,14 @@
     border-radius: 0;
     max-width: 100%;
   }
+  .container {
+    padding: 0 8px;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .navContainer {
+    padding: 20px;
+    padding-bottom: 0;
+  }
 }
