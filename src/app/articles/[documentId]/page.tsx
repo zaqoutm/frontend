@@ -4,7 +4,7 @@ import { getArticleByDocumentId } from "../../../data/articlePageLoaders";
 import { StrapiResponseSingle } from "../../../interfaces/StrapiResponse";
 import Image from "next/image";
 import moment from "moment";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { BlocksRenderer, type BlocksContent } from "@strapi/blocks-react-renderer";
 
 export default async function ArticlePage({ params }: { params: Promise<{ documentId: string }> }) {
   const x = await params;
@@ -12,6 +12,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
   // get the article by document id
   const articleByDocumentId: StrapiResponseSingle = await getArticleByDocumentId(x.documentId);
   const article = articleByDocumentId.data;
+  const content: BlocksContent = articleByDocumentId.data.content ?? [];
 
   // get articles in the same section
   // get mixed news
@@ -44,7 +45,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
 
             {/*  */}
             <div className={styles.content}>
-              <BlocksRenderer content={article.content}></BlocksRenderer>
+              <BlocksRenderer content={content}></BlocksRenderer>
             </div>
           </div>
         </div>

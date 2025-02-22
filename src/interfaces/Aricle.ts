@@ -1,4 +1,5 @@
 import Section from "./Section";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
 
 export interface Article {
   // provided by strapi
@@ -15,7 +16,7 @@ export interface Article {
     url: string;
   };
   title?: string;
-  content?: [];
+  content?: BlocksContent;
   section?: Section;
   isFeatured?: boolean;
   isMain?: boolean;
