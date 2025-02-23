@@ -3,10 +3,9 @@ import * as service from "../data/homepageLoaders";
 import MainArticle from "../components/mainArticle/mainArticle";
 import * as motion from "motion/react-client";
 import Link from "next/link";
-import Image from "next/image";
-import ArticleCard from "../components/articleCard/page";
 import ArticleFeaturedCard from "../components/articleFeaturedCard/page";
 import { StrapiResponse } from "../interfaces/StrapiResponse";
+import ListArticles from "../components/listArticles/page";
 
 export default async function Home() {
   const mainArticlesResponse: StrapiResponse = await service.getMainArticle();
@@ -42,71 +41,36 @@ export default async function Home() {
           </motion.div>
           {/* business */}
           <motion.div
-            initial={{ y: 40 }}
-            animate={{ y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{
               type: "spring",
-              duration: 3,
+              duration: 2,
             }}
             className={styles.articlesSection}
           >
-            <div className={styles.sectioTitle}>
-              <h1>أخبار المال والأعمال</h1>
-              <Image src={"/chevronLeft.svg"} alt='chevron icon' width={18} height={18} />
-            </div>
-            <div className={styles.articlesList}>
-              {businessArticlesResponse.data.map((a) => (
-                <ArticleCard key={a.documentId} article={a} borderTop={true} />
-              ))}
-              <div className={styles.readMoreBtnContainer}>
-                <Link className={styles.readMoreBtn} href={"/business"}>
-                  إقرأ المزيد
-                </Link>
-              </div>
-            </div>
+            <ListArticles listTitle='أخبار المال والأعمال' sectionURL='business' articlesList={businessArticlesResponse} />
           </motion.div>
 
           {/* tech */}
-          <div className={styles.sectioTitle}>
-            <h1>أخبار التكنولوجيا</h1>
-            <Image src={"/chevronLeft.svg"} alt='chevron icon' width={18} height={18} />
-          </div>
-          <div className={styles.articlesList}>
-            {techArticlesResponse.data.map((a) => (
-              <ArticleCard key={a.documentId} article={a} borderTop={true} />
-            ))}
-            <div className={styles.readMoreBtnContainer}>
-              <Link className={styles.readMoreBtn} href={"/technology"}>
-                إقرأ المزيد
-              </Link>
-            </div>
+          <div className={styles.articlesSection}>
+            <ListArticles listTitle='أخبار التكنولوجيا' sectionURL='technology' articlesList={techArticlesResponse} />
           </div>
 
           {/* cultural */}
-          <div className={styles.sectioTitle}>
-            <h1>مقالات ثقافية</h1>
-            <Image src={"/chevronLeft.svg"} alt='chevron icon' width={18} height={18} />
-          </div>
-          <div className={styles.articlesList}>
-            {culturalArticlesResponse.data.map((a) => (
-              <ArticleCard key={a.documentId} article={a} borderTop={true} />
-            ))}
-            <div className={styles.readMoreBtnContainer}>
-              <Link className={styles.readMoreBtn} href={"/technology"}>
-                إقرأ المزيد
-              </Link>
-            </div>
+          <div className={styles.articlesSection}>
+            <ListArticles listTitle='مقالات ثقافية' sectionURL='cultural' articlesList={culturalArticlesResponse} />
           </div>
         </main>
 
         {/*  */}
         {/* Featured articles */}
         <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{
             type: "spring",
-            duration: 6,
+            duration: 2,
           }}
           className={styles.featuredSection}
         >

@@ -27,12 +27,10 @@ export default function ArticleFeaturedCard({ article, borderTop }: Props) {
       {/* article title */}
       <div className={styles.titleContainer}>
         <h1>{article.title}</h1>
-        {article.section ? (
+        {article.section && (
           <div className={styles.titleContainerBadges}>
             <p className={styles.badge}>{article.section?.titleAr}</p>
           </div>
-        ) : (
-          ""
         )}
       </div>
     </Link>

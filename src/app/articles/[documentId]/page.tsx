@@ -1,12 +1,13 @@
 import styles from "./styles.module.css";
 import { SectionHeader } from "../../../components/sectionHeader/sectionHeader";
-import { getArticleByDocumentId } from "../../../data/articlePageLoaders";
-import { StrapiResponseSingle } from "../../../interfaces/StrapiResponse";
+import { getArticleByDocumentId, getArticlesBySection } from "../../../data/articlePageLoaders";
+import { StrapiResponse, StrapiResponseSingle } from "../../../interfaces/StrapiResponse";
 import Image from "next/image";
 import moment from "moment";
 import "moment/locale/ar";
 import { BlocksRenderer, type BlocksContent } from "@strapi/blocks-react-renderer";
 import Link from "next/link";
+import ListArticles from "../../../components/listArticles/page";
 
 moment.locale("ar");
 
@@ -18,6 +19,12 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
   const articleByDocumentId: StrapiResponseSingle = await getArticleByDocumentId(paramsResult.documentId);
   const article = articleByDocumentId.data;
   const content: BlocksContent = articleByDocumentId.data.content ?? [];
+  let relativeArticles: StrapiResponse = { data: [], meta: "meta" };
+
+  if (article.title) {
+    relativeArticles = await getArticlesBySection(article.section?.title ?? "");
+    // console.log(relativeArticles);
+  }
 
   // get articles in the same section
   // get mixed news
@@ -69,11 +76,21 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
               <Link href={"#"}>
                 <Image src='/link-icon.svg' alt='' width={width_height} height={width_height} loading='eager' />
               </Link>
-              <p>شارك المقالة</p>
+
+              <div className={styles.socialLinksText}>
+                <p>شارك المقالة</p>
+                <Image src='/chevronLeft.svg' alt='' width={width_height} height={width_height} loading='eager' />
+              </div>
             </div>
 
             <div className={styles.moreNewsSection}>
-              <h1>more</h1>
+              {relativeArticles && (
+                <ListArticles
+                  listTitle={`المزيد من أخبار ال${article.section?.titleAr ?? ""}`}
+                  sectionURL={article.section?.title ?? "#"}
+                  articlesList={relativeArticles}
+                />
+              )}
             </div>
           </div>
         </div>

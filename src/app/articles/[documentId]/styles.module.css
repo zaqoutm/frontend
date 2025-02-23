@@ -61,13 +61,22 @@
 .socialLinks {
   margin-top: 21px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   align-items: center;
   direction: ltr;
   font-weight: 500;
+  border: 1px solid var(--border);
+  padding: 24px 12px;
+  border-radius: 12px;
 }
-.socialLinks p {
+
+.socialLinksText {
+  display: flex;
+  align-items: center;
   margin-left: 21px;
+  font-weight: 600;
+  gap: 2px;
 }
 
 .socialLinks a {
@@ -84,7 +93,6 @@
 }
 
 .moreNewsSection {
-  border: 1px solid red;
   margin-top: 55px;
 }
 
@@ -118,4 +126,15 @@
 }
 /* <=phone */
 @media screen and (max-width: 767px) {
+  .socialLinks {
+    justify-content: center;
+    gap: 5px;
+    border: none;
+  }
+  .socialLinks a:hover {
+    scale: 1;
+  }
+  .socialLinksText img {
+    display: none;
+  }
 }

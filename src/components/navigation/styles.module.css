@@ -43,7 +43,8 @@
 /* Bottom nav */
 /* toggler + links */
 .navBottom {
-  /* border: 1px solid #000; */
+  /* border: 1px solid red; */
+  align-items: flex-start;
   gap: 34px;
 }
 
@@ -72,10 +73,11 @@
   overflow: hidden;
   gap: 5px;
   margin-inline: auto;
-  box-shadow: 0 0 5px #0000006d;
-  padding: 5px 5px;
+  box-shadow: 0 0 8px #0d1828;
+  border: 1px solid #0d1828;
+  padding: 8px 12px;
   border-radius: 24px;
-  background-color: #222d3f;
+  /* background-color: #222d3f; */
 }
 
 .navBottomLinks a {
