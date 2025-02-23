@@ -12,19 +12,13 @@ export default function ArticleCard({ article, borderTop }: Props) {
   return (
     <Link
       href={`/articles/${article.documentId}`}
-      className={`${styles.main} ${article.isFeatured && styles.featured} ${
-        !borderTop && styles.noBorderTop
-      }`}
+      className={`${styles.main} ${article.isFeatured && styles.featured} ${!borderTop && styles.noBorderTop}`}
     >
       {/* iamge */}
       <div className={styles.imageContainer}>
         <Image
           src={article.photo ? article.photo.url : "/aljazara.svg"}
-          alt={
-            article.photo && article.photo.alternativeText
-              ? article.photo.alternativeText
-              : "Picture text"
-          }
+          alt={article.photo && article.photo.alternativeText ? article.photo.alternativeText : "Picture text"}
           width={200}
           height={200}
           priority={true}
@@ -36,15 +30,7 @@ export default function ArticleCard({ article, borderTop }: Props) {
         {article.section ? (
           <div className={styles.titleContainerBadges}>
             <p className={styles.badge}>{article.section?.titleAr}</p>
-            {article.isFeatured && (
-              <Image
-                src='/favorite-featured-icon.svg'
-                alt='featured'
-                width={12}
-                height={12}
-                priority={true}
-              />
-            )}
+            {article.isFeatured && <Image src='/favorite-featured-icon.svg' alt='featured' width={12} height={12} priority={true} />}
           </div>
         ) : (
           ""
