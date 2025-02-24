@@ -31,47 +31,12 @@
 /*  */
 /*  */
 .navContainer {
-  padding-top: 20px;
+  min-height: 80px;
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
-.views {
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  color: red;
-  z-index: 1;
-}
-.viewDesktop {
-  display: none;
-  @media (min-width: 1060px) {
-    display: flex;
-  }
-}
-
-/* betweem 960 -> 1060 */
-.viewSmallDesktop {
-  display: none;
-  @media screen and (max-width: 1059px) and (min-width: 960px) {
-    display: flex;
-  }
-}
-
-.viewTablet {
-  display: none;
-  @media screen and (max-width: 959px) and (min-width: 768px) {
-    display: flex;
-  }
-}
-
-.viewPhone {
-  display: none;
-  @media (max-width: 767px) {
-    display: flex;
-  }
+  display: flex;
+  justify-content: center;
 }
 
 /*  */

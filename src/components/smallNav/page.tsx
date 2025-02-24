@@ -1,41 +1,43 @@
+"use client";
 import Image from "next/image";
 import styles from "./styles.module.css";
 import Link from "next/link";
-import * as motion from "motion/react-client";
+import { useState } from "react";
 
 export default function SmallNavigation() {
+  const [clicked, setClicked] = useState(false);
+  const closeMenu = () => setClicked(false);
+  const toggleMenu = () => setClicked(!clicked);
+
   return (
     // .navContainer in the global css
-    <motion.div
-      className='navContainer'
-      initial={{ y: 10, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{
-        visualDuration: 0.2,
-      }}
-    >
+    <div className='navContainer'>
       {/*  */}
-      <div className={styles.nav}>
-        <Image
-          className={styles.navToggleImage}
-          src='/burger-menu-black.svg'
-          priority={true}
-          alt='burger icon'
-          width={34}
-          height={34}
-        />
-        <Link href={"/"}>
-          <Image
-            className={styles.navLogoImage}
-            src='/aljazara-black.svg'
-            priority={true}
-            alt='aljazara logo'
-            width={34}
-            height={34}
-          />
-        </Link>
+      <div className={`${styles.nav}`}>
+        <div className={styles.navTop}>
+          <button onClick={toggleMenu}>
+            <Image className={styles.navToggleImage} src='/burger-menu-black.svg' priority={true} alt='burger icon' width={20} height={20} />
+          </button>
+          <Link href={"/"} onClick={closeMenu}>
+            <Image className={styles.navLogoImage} src='/aljazara-black.svg' priority={true} alt='aljazara logo' width={34} height={34} />
+          </Link>
+        </div>
+        {/*  */}
+        <div className={`${styles.drawerLinks} ${clicked && styles.showNav}`}>
+          <Link href='/business' onClick={closeMenu}>
+            المال والأعمال
+          </Link>
+          <Link href='/technology' onClick={closeMenu}>
+            التكنولوجيا
+          </Link>
+          <Link href='/cultural' onClick={closeMenu}>
+            مقالات تثقيفية
+          </Link>
+          <Link href='/immigrant' onClick={closeMenu}>
+            دليل المهاجر
+          </Link>
+        </div>
       </div>
-      {/*  */}
-    </motion.div>
+    </div>
   );
 }
