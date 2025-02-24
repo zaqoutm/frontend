@@ -135,13 +135,18 @@ h3 {
 }
 
 button {
+  color: #fff;
   background-color: var(--accent);
   border: none;
+  align-content: center;
+  padding: 5px 16px;
+  flex-shrink: 0;
+  min-height: 39px;
+  font-family: "Noto Kufi Arabic", Arial, Helvetica, sans-serif;
 }
 
 button:hover {
   cursor: pointer;
-  background-color: var(--accent-hover);
 }
 
 img {
@@ -159,7 +164,9 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  font-family: Arial, Helvetica, "Noto Kufi Arabic", sans-serif;
+  font-family: "Noto Kufi Arabic", Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 12px;
 }
 
 /*  */

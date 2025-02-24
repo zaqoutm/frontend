@@ -2,34 +2,49 @@ import styles from "./page.module.css";
 import * as service from "../data/homepageLoaders";
 import MainArticle from "../components/mainArticle/mainArticle";
 import * as motion from "motion/react-client";
-import Link from "next/link";
 import ArticleFeaturedCard from "../components/articleFeaturedCard/page";
 import { StrapiResponse } from "../interfaces/StrapiResponse";
 import ListArticles from "../components/listArticles/page";
+import { HomePageSwitcher } from "../components/HomePageSwitcher/page";
+import { connection } from "next/server";
 
 export default async function Home() {
+  await connection();
+
   const mainArticlesResponse: StrapiResponse = await service.getMainArticle();
   const businessArticlesResponse: StrapiResponse = await service.getArticlesBySection("business");
   const techArticlesResponse: StrapiResponse = await service.getArticlesBySection("technology");
   const culturalArticlesResponse: StrapiResponse = await service.getArticlesBySection("cultural");
+
   const featuredArticlesRes: StrapiResponse = await service.getFeaturedArticles();
+
+  // return (
+  //   <div className={styles.page}>
+  //     <div className={styles.switcher}>
+  //       {/* pass lists already loaded on the server */}
+  //       <HomePageSwitcher />
+  //     </div>
+
+  //     {/* hide container on phone */}
+  //     <div className={styles.container}>
+  //       <h1>Desktop container</h1>
+  //     </div>
+  //   </div>
+  // );
 
   return (
     <div className={styles.page}>
       {/* switcher on tablet */}
       <div className={styles.switcher}>
-        <Link href={"#"} className={styles.activeSwitch}>
-          آخر الأخبار
-        </Link>
-        <Link href={"#"}>أخبار مميزة</Link>
+        <HomePageSwitcher
+          {...[mainArticlesResponse, businessArticlesResponse, techArticlesResponse, culturalArticlesResponse, featuredArticlesRes]}
+        />
       </div>
 
-      {/* contains (featured) and (main,articles) */}
       <div className={styles.container}>
         <main className={styles.main}>
-          {/* main article */}
           <motion.div
-            initial={{ y: -5, opacity: 0 }}
+            initial={{ y: -12, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
               type: "spring",
@@ -37,26 +52,18 @@ export default async function Home() {
               duration: 2,
             }}
           >
-            {mainArticlesResponse ? <MainArticle {...mainArticlesResponse.data[0]} /> : <MainArticle />}
-          </motion.div>
-          {/* business */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              type: "spring",
-              duration: 2,
-            }}
-            className={styles.articlesSection}
-          >
-            <ListArticles listTitle='أخبار المال والأعمال' sectionURL='business' articlesList={businessArticlesResponse} />
+            {/* main article */}
+            <MainArticle {...mainArticlesResponse.data[0]} />
           </motion.div>
 
+          {/* business */}
+          <div className={styles.articlesSection}>
+            <ListArticles listTitle='أخبار المال والأعمال' sectionURL='business' articlesList={businessArticlesResponse} />
+          </div>
           {/* tech */}
           <div className={styles.articlesSection}>
             <ListArticles listTitle='أخبار التكنولوجيا' sectionURL='technology' articlesList={techArticlesResponse} />
           </div>
-
           {/* cultural */}
           <div className={styles.articlesSection}>
             <ListArticles listTitle='مقالات ثقافية' sectionURL='cultural' articlesList={culturalArticlesResponse} />

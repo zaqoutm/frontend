@@ -1,0 +1,33 @@
+.switcher {
+  background-color: var(--gray-bg);
+  max-width: 340px;
+  min-height: 55px;
+  padding: 8px 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  margin-bottom: 24px;
+  border-radius: 30px;
+}
+
+.switcherButton {
+  color: var(--secondary-text);
+  background-color: var(--gray-bg);
+  font-size: 12px;
+  padding: 8px 34px;
+  border-radius: 30px;
+}
+
+.activeSwitch {
+  background-color: #fff;
+  color: #000;
+}
+
+.newsTab {
+  padding: 0px 8px;
+}
+
+.hideMe {
+  display: none;
+}

@@ -73,7 +73,7 @@
   overflow: hidden;
   gap: 5px;
   margin-inline: auto;
-  box-shadow: 0 0 8px #0d1828;
+  /* box-shadow: 0 0 8px #0d1828; */
   border: 1px solid #0d1828;
   padding: 8px 12px;
   border-radius: 24px;
