@@ -8,10 +8,14 @@ import * as motion from "motion/react-client";
 
 export default function SmallNavigation() {
   const closeMenu = () => setisOpen(false);
-  const toggleMenu = () => setisOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsBurgerClicked(!isBurgerClicked);
+    setisOpen(!isOpen);
+  };
+  const [isBurgerClicked, setIsBurgerClicked] = useState(false);
 
-  const [isOpen, setisOpen] = useState(true);
-  // const [isOpen, setisOpen] = useState(false);
+  // const [isOpen, setisOpen] = useState(true);
+  const [isOpen, setisOpen] = useState(false);
   // setInterval(() => {
   //   toggleMenu();
   // }, 3000);
@@ -28,14 +32,14 @@ export default function SmallNavigation() {
       opacity: 0,
       height: 0,
       transition: {
-        duration: 0.4,
+        duration: 0.25,
       },
     },
     open: {
       opacity: 1,
       height: "auto",
       transition: {
-        duration: 0.4,
+        duration: 0.25,
       },
     },
   };
@@ -81,17 +85,16 @@ export default function SmallNavigation() {
     <div className='navContainer'>
       <div className={`${styles.nav}`}>
         {/*  */}
-        {/*  */}
         <div className={styles.navTop}>
-          <button onClick={toggleMenu}>
-            <Image className={styles.navToggleImage} src='/burger-menu-black.svg' priority={true} alt='burger icon' width={20} height={20} />
+          <button onClick={toggleMenu} className={`${isBurgerClicked && styles.moveBurgers}`}>
+            {/* <Image className={styles.navToggleImage} src='/burger-menu-black.svg' priority={true} alt='burger icon' width={20} height={20} /> */}
+            <div className={`${styles.menuButtonBurger} `}></div>
           </button>
           <Link href={"/"} onClick={closeMenu}>
             <Image className={styles.navLogoImage} src='/aljazara-black.svg' priority={true} alt='aljazara logo' width={34} height={34} />
           </Link>
         </div>
 
-        {/*  */}
         {/* links */}
         <motion.div className={`${styles.drawerLinks}`} variants={containerVariants} initial={false} animate={isOpen ? "open" : "closed"}>
           {/* kid */}

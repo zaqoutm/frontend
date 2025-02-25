@@ -15,7 +15,7 @@
 .navTop {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .navTop button {
@@ -23,7 +23,40 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
+  padding: 0 34px;
+}
+
+.menuButtonBurger {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuButtonBurger::after,
+.menuButtonBurger::before {
+  content: "";
+  width: 18px;
+  height: 2.5px;
+  border-radius: 5px;
+  background-color: var(--foreground);
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+}
+
+.menuButtonBurger::before {
+  transform: translateY(-4px);
+}
+.menuButtonBurger::after {
+  transform: translateY(4px);
+}
+
+.moveBurgers .menuButtonBurger::before {
+  transform: rotate(45deg);
+}
+
+.moveBurgers .menuButtonBurger::after {
+  transform: rotate(-45deg);
 }
 
 .navLogoImage,
