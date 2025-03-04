@@ -1,0 +1,95 @@
+.main {
+  border-top: 1px dotted var(--border-dark);
+  display: flex;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.noBorderTop {
+  border-top: none;
+}
+
+.main:hover h1 {
+  text-decoration: underline;
+  color: var(--orange);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.cardTop p {
+  color: var(--secondary-text);
+}
+.cardPunkt {
+  width: 8px;
+  height: 8px;
+  border-radius: 44px;
+  background-color: var(--accent);
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-start;
+  flex-grow: 1;
+}
+
+.titleContainer h1 {
+  padding-right: 24px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.titleContainerBadges {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.titleContainerBadges img {
+  width: auto;
+  max-height: 18px;
+}
+
+.badge {
+  border-radius: 16px;
+  padding: 8px 16px;
+  width: fit-content;
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    max-width: 100%;
+  }
+  .imageContainer {
+    width: 150px;
+  }
+  .imageContainer img {
+    height: 80px;
+    border: none;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .imageContainer {
+    width: 100px;
+  }
+  .imageContainer img {
+    height: 60px;
+  }
+  .titleContainer {
+    padding: 16px;
+  }
+}

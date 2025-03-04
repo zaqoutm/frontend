@@ -1,5 +1,9 @@
 //
 //
+// https://docs-next.strapi.io/
+// https://docs.strapi.io/dev-docs/api/rest/parameters
+//
+//
 //
 // try to fetch from API_PATH/api
 export const tryFetch = async (params: string) => {

@@ -42,13 +42,13 @@
 @media screen and (max-width: 959px) {
   .readMoreBtnContainer {
     padding-bottom: 34px;
-  }
-
-  .readMoreBtn {
-    min-width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     padding: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .readMoreBtn {
+    min-width: 100%;
   }
 }

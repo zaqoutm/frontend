@@ -8,6 +8,8 @@ import "moment/locale/ar";
 import { BlocksRenderer, type BlocksContent } from "@strapi/blocks-react-renderer";
 import Link from "next/link";
 import ListArticles from "../../../components/listArticles/page";
+import { getMixedLatestArticles } from "../../../data/sharedArticlesLoader";
+import ListMixedArticles from "../../../components/listMixedArticles/page";
 
 moment.locale("ar");
 
@@ -19,11 +21,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
   const articleByDocumentId: StrapiResponseSingle = await getArticleByDocumentId(paramsResult.documentId);
   const article = articleByDocumentId.data;
   const content: BlocksContent = articleByDocumentId.data.content ?? [];
-  let relativeArticles: StrapiResponse = { data: [], meta: "meta" };
+  let relatedArticles: StrapiResponse = { data: [], meta: "meta" };
+
+  // mixed articles
+  const mixedArticles: StrapiResponse = await getMixedLatestArticles(10);
 
   if (article.title) {
-    relativeArticles = await getArticlesBySection(article.section?.title ?? "");
-    // console.log(relativeArticles);
+    relatedArticles = await getArticlesBySection(article.section?.title ?? "");
+    // console.log(relatedArticles);
   }
 
   // get articles in the same section
@@ -34,7 +39,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
       {article.title ? <SectionHeader title={article.title} /> : ""}
 
       <div className={styles.container}>
-        <div className={styles.mainContainer}>
+        {/* Article view, share links, more from same section */}
+        <div className={styles.rightContainer}>
           <div>
             <div className={styles.imageContainer}>
               <Image
@@ -84,15 +90,19 @@ export default async function ArticlePage({ params }: { params: Promise<{ docume
             </div>
 
             <div className={styles.moreNewsSection}>
-              {relativeArticles && (
+              {relatedArticles && (
                 <ListArticles
                   listTitle={`المزيد من أخبار ال${article.section?.titleAr ?? ""}`}
                   sectionURL={article.section?.title ?? "#"}
-                  articlesList={relativeArticles}
+                  articlesList={relatedArticles}
                 />
               )}
             </div>
           </div>
+        </div>
+
+        <div className={styles.leftContainer}>
+          {mixedArticles && <ListMixedArticles articlesList={mixedArticles} listTitle='المزيد من المقالات' />}
         </div>
       </div>
     </div>

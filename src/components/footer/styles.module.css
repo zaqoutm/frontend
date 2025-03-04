@@ -1,5 +1,4 @@
 .footer {
-  background-color: #102039;
   color: #fff;
   padding: 55px 24px;
   min-height: 200px;
@@ -8,7 +7,8 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  border-bottom: 2px solid var(--orange);
+  background: linear-gradient(to right, rgb(0, 98, 255) 12%, rgb(255, 45, 154) 47%, rgb(255, 140, 0) 100%) left bottom #102039 no-repeat;
+  background-size: 100% 2px;
 }
 
 .footerLinks {

@@ -2,13 +2,20 @@
 }
 
 .container {
-  padding: 21px;
+  display: flex;
   margin-inline: auto;
   max-width: 1200px;
+  gap: 55px;
 }
 
-.mainContainer {
+.rightContainer {
+  display: flex;
+  flex-direction: column;
   max-width: 690px;
+}
+
+.leftContainer {
+  flex-grow: 1;
 }
 
 .imageContainer {
@@ -44,18 +51,27 @@
   display: flex;
   flex-direction: column;
 }
+
+/* Blocks Renderer from strapi*/
+.content p {
+}
 .content h1 {
   font-size: 34px;
 }
 .content h2 {
   font-size: 24px;
 }
-
 .content a {
   color: var(--accent);
 }
 .content ul {
   list-style-position: inside;
+}
+.content img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+  border-radius: 11px;
 }
 
 .socialLinks {
@@ -93,7 +109,7 @@
 }
 
 .moreNewsSection {
-  margin-top: 55px;
+  margin-top: 21px;
 }
 
 /*  Responsivness  */
@@ -101,7 +117,13 @@
 /*  */
 /*  */
 /* >= small desktop  */
-@media screen and (min-width: 960px) {
+@media screen and (max-width: 1024px) {
+  .container {
+    gap: 0;
+  }
+  .leftContainer {
+    padding: 0;
+  }
 }
 /* <=Tablet */
 @media screen and (max-width: 959px) {
@@ -110,7 +132,16 @@
   }
   .container {
     padding: 0;
+    flex-direction: column;
   }
+  .rightContainer {
+    max-width: 100%;
+  }
+  .leftContainer {
+    padding: 0;
+    max-width: 100%;
+  }
+
   .imageContainer {
     max-width: 100%;
   }

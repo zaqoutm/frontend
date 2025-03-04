@@ -7,7 +7,10 @@ import * as motion from "motion/react-client";
 // https://motion.dev/docs/react-quick-start
 
 export default function SmallNavigation() {
-  const closeMenu = () => setisOpen(false);
+  const closeMenu = () => {
+    setisOpen(false);
+    setIsBurgerClicked(false);
+  };
   const toggleMenu = () => {
     setIsBurgerClicked(!isBurgerClicked);
     setisOpen(!isOpen);

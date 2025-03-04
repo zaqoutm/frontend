@@ -8,3 +8,10 @@
   color: #fff;
   padding: 0 16px;
 }
+
+@media screen and (max-width: 959px) {
+  .header {
+    text-align: center;
+    padding: 21px 16px;
+  }
+}
