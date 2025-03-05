@@ -1,0 +1,62 @@
+.moreArticles {
+  max-width: 793px;
+}
+
+/* load more button */
+.readMoreBtnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 21px;
+}
+.readMoreBtn {
+  display: block;
+  max-width: fit-content;
+  background-color: var(--foreground);
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 21px;
+  border-radius: 34px;
+  border: 1px solid;
+  border: 1px solid #000;
+}
+.readMoreBtn:hover {
+  background-color: var(--foreground-hover);
+}
+.readMoreBtn:disabled {
+  background-color: var(--border-dark);
+}
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+  .moreArticles {
+    padding: 0 11px;
+  }
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .moreArticles {
+  }
+  .moreArticles {
+    width: 100%;
+  }
+
+  .readMoreBtnContainer {
+    padding-bottom: 34px;
+    text-align: center;
+    padding: 12px;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .moreArticles {
+  }
+
+  .readMoreBtn {
+    min-width: 100%;
+  }
+}

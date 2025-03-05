@@ -1,16 +1,19 @@
 import { Metadata } from "next";
 import { SectionHeader } from "../../components/sectionHeader/sectionHeader";
+import styles from "./styles.module.css";
+
+import { SectionPageLayout } from "../../components/SectionPageLayout/page";
 
 export const metadata: Metadata = {
-  title: "الجزرة ثقافة",
-  description: "جميع مقالات الثقافة من الجزرة نيوز",
+  title: "الجزرة مال وأعمال",
+  description: "جميع مقالات المال والأعمال من الجزرة نيوز",
 };
 
-export default function Articles() {
+export default async function Page() {
   return (
-    <>
+    <div className={styles.main}>
       <SectionHeader title={"مقالات ثقافية"} />
-      <h1>أخبار ثقافية</h1>
-    </>
+      <SectionPageLayout sectionTitle='cultrular' />
+    </div>
   );
 }

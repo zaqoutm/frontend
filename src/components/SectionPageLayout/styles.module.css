@@ -1,0 +1,88 @@
+/*  */
+/*  */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 11px 0;
+}
+
+.topContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 0 11px;
+}
+.topContent .articleBig {
+  flex-grow: 1;
+}
+
+/*  */
+/*  */
+.bottomContent {
+  gap: 30px;
+  padding: 34px 0;
+  display: flex;
+}
+.moreArticles {
+  max-width: 793px;
+}
+.mixedArticles {
+  max-width: 377px;
+}
+
+/*  Responsivness  */
+/*  */
+/*  */
+/*  */
+/* >= small desktop  */
+@media screen and (min-width: 960px) {
+  .moreArticles {
+    padding: 0 11px;
+  }
+}
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    padding-top: 21px;
+  }
+  .container {
+    padding: 11px 8px;
+  }
+
+  .bottomContent {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .moreArticles {
+  }
+
+  .mixedArticles {
+    max-width: 100%;
+    margin-top: 55px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .moreArticles,
+  .mixedArticles {
+    width: 100%;
+  }
+  .topContent {
+    padding: 0;
+  }
+}
+/* <=phone */
+@media screen and (max-width: 767px) {
+  .moreArticles {
+  }
+  .articleBig {
+    padding: 0;
+  }
+  .topContent {
+    gap: 0;
+  }
+  .bottomContent {
+    padding: 0;
+  }
+}

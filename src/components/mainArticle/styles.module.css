@@ -9,6 +9,7 @@
   overflow: hidden;
   margin-bottom: 21px;
   position: relative;
+  height: 100%;
 }
 
 .imageContainer {
@@ -61,8 +62,6 @@
 @media screen and (max-width: 959px) {
   .main {
     max-width: 100%;
-    border-radius: 0;
-    box-shadow: none;
   }
   .imageContainer {
     border-radius: 0;
@@ -99,6 +98,11 @@
 
   .badge {
     order: 1;
+    background-color: #fff;
+    border: 1px dashed var(--accent);
+    color: var(--accent);
+    padding: 0 16px;
+    border-radius: 5px;
   }
 
   .titleContainer h1 {
