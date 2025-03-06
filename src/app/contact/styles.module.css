@@ -1,0 +1,43 @@
+.main {
+}
+
+.content {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 55px 8px;
+}
+.content h1 {
+  padding: 12px 0;
+  color: var(--secondary-text);
+}
+.content p {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.links a {
+  background-color: #f3f3f3;
+  width: fit-content;
+  padding: 12px 21px;
+  border-radius: 12px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    padding-top: 21px;
+  }
+  .content {
+    padding: 21px 8px;
+  }
+}

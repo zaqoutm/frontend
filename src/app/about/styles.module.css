@@ -1,0 +1,23 @@
+.main {
+}
+
+.content {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 55px 8px;
+}
+
+.content p {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    padding-top: 21px;
+  }
+  .content {
+    padding: 21px 8px;
+  }
+}

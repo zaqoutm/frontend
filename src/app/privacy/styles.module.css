@@ -1,0 +1,29 @@
+.main {
+}
+
+.content {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: 55px 8px;
+}
+.content h1 {
+  padding: 12px 0;
+}
+.content ul {
+  list-style: circle;
+  list-style-position: inside;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+}
+
+/* <=Tablet */
+@media screen and (max-width: 959px) {
+  .main {
+    padding-top: 21px;
+  }
+  .content {
+    padding: 21px 8px;
+  }
+}
