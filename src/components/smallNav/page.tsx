@@ -93,7 +93,7 @@ export default function SmallNavigation() {
             {/* <Image className={styles.navToggleImage} src='/burger-menu-black.svg' priority={true} alt='burger icon' width={20} height={20} /> */}
             <div className={`${styles.menuButtonBurger} `}></div>
           </button>
-          <Link href={"/"} onClick={closeMenu}>
+          <Link href={"/"} onClick={closeMenu} className={styles.homePageLink}>
             <Image className={styles.navLogoImage} src='/aljazara-black.svg' priority={true} alt='aljazara logo' width={34} height={34} />
           </Link>
         </div>

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { SectionHeader } from "../../components/sectionHeader/sectionHeader";
 import { SectionPageLayout } from "../../components/SectionPageLayout/page";
+import styles from "./styles.module.css";
 
 export const metadata: Metadata = {
   title: "الجزرة دليل المهاجر",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <div>
+    <div className={styles.main}>
       <SectionHeader title={"دليل المهاجر"} />
       <SectionPageLayout sectionTitle='immigrant' />
     </div>

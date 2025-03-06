@@ -2,20 +2,22 @@
   width: 90%;
   min-width: 300px;
   max-width: 400px;
-  min-height: 55px;
+  min-height: 50px;
   color: #000;
   background-color: rgba(237, 237, 237, 70%);
-  padding: 4px 12px 4px 21px;
+  padding: 5px 12px 5px 21px;
   border-radius: 28px;
   backdrop-filter: blur(10px);
   position: absolute;
-  top: 8;
+  top: 10px;
 }
 
 .navTop {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
 }
 
 .navTop button {
@@ -24,6 +26,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 34px;
+  height: 100%;
 }
 
 .menuButtonBurger {
@@ -40,7 +43,7 @@
   height: 2.5px;
   border-radius: 5px;
   background-color: var(--foreground);
-  transition: all 0.25s ease-in-out;
+  transition: all 0.21s ease-in-out;
   position: absolute;
 }
 
@@ -59,10 +62,17 @@
   transform: rotate(-45deg);
 }
 
+.homePageLink {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .navLogoImage,
 .navToggleImage {
-  height: auto;
-  max-width: 50px;
+  /* border: 1px solid red; */
+  height: 100%;
+  width: auto;
 }
 
 .navLogoImage {
