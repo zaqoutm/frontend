@@ -18,20 +18,6 @@ export default async function Home() {
 
   const featuredArticlesRes: StrapiResponse = await service.getFeaturedArticles();
 
-  // return (
-  //   <div className={styles.page}>
-  //     <div className={styles.switcher}>
-  //       {/* pass lists already loaded on the server */}
-  //       <HomePageSwitcher />
-  //     </div>
-
-  //     {/* hide container on phone */}
-  //     <div className={styles.container}>
-  //       <h1>Desktop container</h1>
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <div className={styles.page}>
       {/* switcher on tablet */}

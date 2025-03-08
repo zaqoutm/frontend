@@ -18,7 +18,7 @@ export default async function Page() {
       <div className={styles.content}>
         <div className={styles.flex}>
           <Image src='/chevronLeft.svg' alt='' width={width_height} height={width_height} loading='eager' />
-          <h1>عبر منصات التواصل</h1>
+          <h1>عبر منصات التواصل الاجتماعي</h1>
         </div>
         <div className={styles.links}>
           <a href='https://facebook.com/#' target='_blank'>

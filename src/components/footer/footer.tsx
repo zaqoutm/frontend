@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
+import Link from "next/link";
 
 export default function FooterComponent() {
   return (
@@ -12,9 +13,9 @@ export default function FooterComponent() {
         </div>
       </div>
       <div className={styles.footerLinks}>
-        <a href='/about'>من نحن</a>
-        <a href='/privacy'>سياسة الخصوصية</a>
-        <a href='/contact'>اتصل بنا</a>
+        <Link href='/about'>من نحن</Link>
+        <Link href='/privacy'>سياسة الخصوصية</Link>
+        <Link href='/contact'>اتصل بنا</Link>
       </div>
     </div>
   );

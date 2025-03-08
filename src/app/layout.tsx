@@ -4,6 +4,7 @@ import "./globals.css";
 import NavigationComponent from "../components/navigation/navigation";
 import FooterComponent from "../components/footer/footer";
 import SmallNavigation from "../components/smallNav/page";
+import NextTopLoader from "nextjs-toploader";
 
 // Fonts
 // use variables in css
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang='ar'>
       <body className={`${almarai.variable} ${notoKufi.variable}`}>
+        <NextTopLoader speed={800} color='linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff)' showSpinner={false} />
         <SmallNavigation />
         <NavigationComponent />
         <div className='children'>{children}</div>

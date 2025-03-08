@@ -7,8 +7,8 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  background: linear-gradient(to right, rgb(0, 98, 255) 12%, rgb(255, 45, 154) 47%, rgb(255, 140, 0) 100%) left bottom #102039 no-repeat;
-  background-size: 100% 2px;
+  background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff) left bottom #102039 no-repeat;
+  background-size: 100% 5px;
 }
 
 .footerLinks {
